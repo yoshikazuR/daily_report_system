@@ -14,7 +14,7 @@ public interface JpaConst {
     String EMP_COL_ADMIN_FLAG = "admin_flag";
     String EMP_COL_CREATED_AT = "created_at";
     String EMP_COL_UPDATED_AT = "updated_at";
-    String EMP_COL_DELETED_FLAG = "deleted_flag";
+    String EMP_COL_DELETE_FLAG = "delete_flag";
 
     int ROLE_ADMIN = 1;
     int ROLE_GENERAL = 0;
