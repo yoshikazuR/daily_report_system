@@ -10,7 +10,7 @@ public enum ForwardConst {
     CMD("command"),
     CMD_NONE(""),
     CMD_INDEX("index"),
-    CMD_SHOW("sohw"),
+    CMD_SHOW("show"),
     CMD_SHOW_LOGIN("showlogin"),
     CMD_LOGIN("login"),
     CMD_LOGOUT("logout"),
