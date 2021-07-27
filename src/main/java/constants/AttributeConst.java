@@ -1,7 +1,7 @@
 package constants;
 
 public enum AttributeConst {
-    FLUSH("Flush"),
+    FLUSH("flush"),
     MAX_ROW("maxRow"),
     PAGE("page"),
     TOKEN("_token"),
@@ -11,7 +11,7 @@ public enum AttributeConst {
 
     EMPLOYEE("employee"),
     EMPLOYEES("employees"),
-    EMP_COUNT("employee_count"),
+    EMP_COUNT("employees_count"),
     EMP_ID("id"),
     EMP_CODE("code"),
     EMP_PASS("password"),
