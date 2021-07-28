@@ -20,14 +20,12 @@ public class AuthAction extends ActionBase {
 
         service = new EmployeeService();
 
-        //メソッドを実行
         invoke();
 
         service.close();
     }
 
     public void showLogin() throws ServletException, IOException {
-
         putRequestScope(AttributeConst.TOKEN, getTokenId());
 
         String flush = getSessionScope(AttributeConst.FLUSH);

@@ -40,7 +40,6 @@ public abstract class ActionBase {
         try {
 
             String command = request.getParameter(ForwardConst.CMD.getValue());
-
             commandMethod = this.getClass().getDeclaredMethod(command, new Class[0]);
             commandMethod.invoke(this, new Object[0]);
 

@@ -34,7 +34,6 @@ public class EmployeeService extends ServiceBase {
 
         try {
             String pass = EncryptUtil.getPasswordEncrypt(plainPass, pepper);
-
             e = em.createNamedQuery(JpaConst.Q_EMP_GET_BY_CODE_AND_PASS, Employee.class)
                     .setParameter(JpaConst.JPQL_PARM_CODE, code)
                     .setParameter(JpaConst.JPQL_PARM_PASSWORD,pass)
@@ -43,7 +42,7 @@ public class EmployeeService extends ServiceBase {
         }catch (NoResultException ex) {
 
         }
-
+        System.out.println(e);
         return EmployeeConverter.toView(e);
     }
 
@@ -124,7 +123,11 @@ public class EmployeeService extends ServiceBase {
     public Boolean validateLogin(String code, String plainPass, String pepper) {
 
         boolean isValidEmployee = false;
+
         if (code != null && !code.equals("") && plainPass != null && !plainPass.equals("")) {
+            System.out.println(code);
+            System.out.println(plainPass);
+            System.out.println(pepper);
             EmployeeView ev = findOne(code, plainPass, pepper);
 
             if (ev != null && ev.getId() != null ) {
