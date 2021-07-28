@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.servlet.ServletException;
 
+import actions.views.EmployeeView;
 import actions.views.ReportView;
 import constants.AttributeConst;
 import constants.ForwardConst;
@@ -62,7 +63,7 @@ public class ReportAction extends ActionBase {
 
     }
 
-    ublic void create() throws ServletException, IOException {
+    public void create() throws ServletException, IOException {
 
         //CSRF対策 tokenのチェック
         if (checkToken()) {
@@ -111,6 +112,24 @@ public class ReportAction extends ActionBase {
                 //一覧画面にリダイレクト
                 redirect(ForwardConst.ACT_REP, ForwardConst.CMD_INDEX);
             }
+        }
+    }
+
+    public void show() throws ServletException, IOException {
+
+        //idを条件に日報データを取得する
+        ReportView rv = service.findOne(toNumber(getRequestParam(AttributeConst.REP_ID)));
+
+        if (rv == null) {
+            //該当の日報データが存在しない場合はエラー画面を表示
+            forward(ForwardConst.FW_ERR_UNKNOWN);
+
+        } else {
+
+            putRequestScope(AttributeConst.REPORT, rv); //取得した日報データ
+
+            //詳細画面を表示
+            forward(ForwardConst.FW_REP_SHOW);
         }
     }
 
