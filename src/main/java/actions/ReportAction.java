@@ -48,7 +48,6 @@ public class ReportAction extends ActionBase {
     }
 
     public void entryNew() throws ServletException, IOException {
-
         putRequestScope(AttributeConst.TOKEN, getTokenId());
 
         ReportView rv = new ReportView();

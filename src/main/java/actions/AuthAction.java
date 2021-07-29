@@ -45,7 +45,6 @@ public class AuthAction extends ActionBase {
         String pepper = getContextScope(PropertyConst.PEPPER);
 
         Boolean isValidEmployee = service.validateLogin(code, plainPass, pepper);
-
         if (isValidEmployee) {
             if (checkToken()) {
 
